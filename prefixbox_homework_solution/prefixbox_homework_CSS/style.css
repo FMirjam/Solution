@@ -1,0 +1,204 @@
+:root {
+  --prefixbox-primary: #1abc9c;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 30px 0 0 30px;
+}
+.search-title {
+  font-family: 'Arial';
+  display: flex;
+  align-items: flex-start;
+}
+.search-input {
+  width: 500px;
+  margin-left: 15px;
+  position: relative;
+}
+input#keyword {
+  position: relative;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 15px;
+  border-radius: 25px;
+  border: 2px solid var(--prefixbox-primary);
+}
+input#keyword:focus {
+  outline: none;
+}
+
+/*--------------------AUTOCOMPLETE------------------------*/
+
+.prefixbox-autocomplete-container {
+  margin: 0;
+  display: flex;
+  background-color: #fff;
+  border: 2px solid #1abc9c;
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px -1px rgba(23, 22, 22, 0.7);
+  z-index: 62;
+  position: absolute;
+  font-family: 'Arial';
+  width: 700px;
+  top: 44px;
+}
+.prefixbox-autocomplete-container.open {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.prefixbox-autocomplete-container .col-1 {
+  order: 1;
+  width: 30%;
+  background-color: #1abc9c;
+  border-radius: 20px 0 0 20px;
+}
+.prefixbox-autocomplete-container .col-2 {
+  order: 2;
+  width: 70%;
+  background: #fff;
+  border-radius: 0 25px 25px 0;
+}
+
+.prefixbox-autocomplete-container .group-id-2 {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  max-height: 420px;
+  align-items: center;
+  justify-content: space-around;
+  margin: 8px 8px 8px;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1abc9c;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: gray;
+  border-radius: 10px;
+}
+.prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container {
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 15px;
+  margin: 10px 10px 10px 10px;
+  border-bottom: solid #1ccaa7 1px;
+}
+.prefixbox-autocomplete-container
+  .prefixbox-autocomplete-keyword-container:hover {
+  background-color: #1ccaa7;
+  border-radius: 25px;
+  margin: 10px 10px 10px 15px;
+  border-bottom: none;
+}
+
+.prefixbox-group-2-title.pfbx-group-title {
+  display: none;
+}
+.prefixbox-autocomplete-product-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prefixbox-autocomplete-product {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.prefixbox-autocomplete-product:hover {
+  border: solid #1abc9c;
+  border-radius: 25px;
+}
+
+.prefixbox-autocomplete-left {
+  width: 100%;
+  height: 100px;
+  max-height: 120px;
+}
+.prefixbox-autocomplete-left img {
+  width: 100px;
+  max-width: 120px;
+  height: 100px;
+  max-height: 120px;
+}
+.prefixbox-autocomplete-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+.prefixbox-autocomplete-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 12px;
+  margin-top: 15px;
+}
+.prefixbox-autocomplete-right span {
+  font-weight: 700;
+}
+.prefixbox-regular-price {
+  color: #1ccaa7;
+  display: flex;
+  justify-content: center;
+}
+.prefixbox-old-price {
+  color: gray;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  text-decoration: line-through;
+}
+.prefixbox-sale-price {
+  color: #ff0000;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 500px) {
+  .search-form {
+    margin: 0;
+    padding: 15px;
+  }
+  .search-title {
+    display: none;
+  }
+  .search-input {
+    margin: 0;
+  }
+  .prefixbox-autocomplete-container {
+    width: 460px;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column wrap;
+  }
+
+  .prefixbox-autocomplete-container .col-1 {
+    order: 1;
+    width: 100%;
+    background-color: #1abc9c;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .prefixbox-autocomplete-container .col-2 {
+    order: 2;
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+  }
+}
